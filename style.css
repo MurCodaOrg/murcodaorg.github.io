@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  background: #000;
+}
+
+.title {
+  margin-top: 3mm;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+.slogan {
+  margin-top: 3mm;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
