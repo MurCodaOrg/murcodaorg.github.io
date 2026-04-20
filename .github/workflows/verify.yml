@@ -1,4 +1,4 @@
-name: MurCoda Verify
+name: MurCoda Verify Check
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 2 
 
       - name: Create verify folder
         run: |
@@ -33,13 +33,12 @@ jobs:
       - name: Generate verification report
         run: |
           next_number=${{ steps.get_next_number.outputs.next_number }}
-          report_file="verify/${next_number}.txt
+          report_file="verify/${next_number}.txt"
           
-          author=$(git log -1 --pretty=format:'%an <%ae>')
-          commit_hash=$(git log -1 --pretty=format:'%h')
-
+          author=$(git log -1 --pretty=format:"%an <%ae>")
+          commit_hash=$(git log -1 --pretty=format:"%h")
+          
           if git rev-parse HEAD^ >/dev/null 2>&1; then
-          
             stats=$(git diff --numstat HEAD^ HEAD 2>/dev/null || echo "")
             total_changes=0
             total_lines=0
@@ -53,44 +52,32 @@ jobs:
 
             changed_files=$(git diff --name-only HEAD^ HEAD)
           else
-          
             total_changes=$(git ls-files | wc -l)
             total_lines=$total_changes
             changed_files=$(git ls-files)
           fi
 
           cat > "$report_file" << EOF
-          === MURCODA VERIFY REPORT ===
-          File Number: $next_number
-          Generated at: $(date '+%Y-%m-%d %H:%M:%S')
-          Commit Hash: $commit_hash
-          Commit Author: $author
-          Total Changes: $total_changes lines
-          Total Lines Modified: $total_lines
+=== MURCODA VERIFY REPORT ===
+File Number: $next_number
+Generated at: $(date '+%Y-%m-%d %H:%M:%S')
+Commit Hash: $commit_hash
+Commit Author: $author
+Total Changes: $total_changes lines
+Total Lines Modified: $total_lines
 
-          CHANGED FILES:
-          $(printf '%s\n' "$changed_files" | while IFS= read -r file; do
-            filename=$(basename "$file")
-            extension="${filename##*.}"
-            
-            if [ "$extension" = "$filename" ]; then
-              extension="N/A"
-            fi
-            echo "  - Name: $filename"
-            echo "    Extension: .$extension"
-          done)
+CHANGED FILES:
+$(printf '%s\n' "$changed_files" | while IFS= read -r file; do
+  filename=$(basename "$file")
+  extension="${filename##*.}"
+  if [ "$extension" = "$filename" ]; then
+    extension="N/A"
+  fi
+  echo "  - Name: $filename"
+  echo "    Extension: .$extension"
+done)
 
-          STATUS: SUCCESS ✅
-          EOF
+STATUS: SUCCESS ✅
+EOF
 
           echo "✅ MurCoda Verify: Report $next_number created successfully."
-          echo "📁 Report saved as: $report_file"
-          echo "👤 Author: $author"
-          echo "🔄 Total changes: $total_changes lines"
-
-      - name: Upload verification report as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: verify-reports
-          path: verify/
-          retention-days: 30
