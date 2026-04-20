@@ -89,7 +89,7 @@ jobs:
           echo "🔄 Total changes: $total_changes lines"
 
       - name: Upload verification report as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: verify-reports
           path: verify/
