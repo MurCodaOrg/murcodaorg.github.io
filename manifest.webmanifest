@@ -4,7 +4,7 @@
   "description": "Официальный сайт компании ООО «MurCoda»",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#90ff90",
+  "background_color": "#ffffff",
   "theme_color": "#90ff90",
   "icons": [
     {
