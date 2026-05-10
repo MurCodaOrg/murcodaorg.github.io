@@ -59,16 +59,24 @@
     </script>
     <script src="/js/main.js"></script>
     <link rel="stylesheet" href="/css/main.css">
+    <link
+      rel="preload"
+      href="/lv_0_20260427192734.mp4"
+      as="video"
+      type="video/mp4"
+    >
   </head>
   <body>
     <header>
       <a href="https://murcodaorg.github.io">
-        <img src="assets/64.svg" id="logo" alt="Логотип">
+        <video
+          id="logo"
+          src="/assets/lv_0_20260427192734.mp4"
+          loop
+        >
+        </video>
       </a>
       <h1>MurCoda</h1>
     </header>
-    <video controls>
-      <source src="/assets/lv_0_20260427192734.mp4" type="video/mp4" />
-    </video>
   </body>
 </html>
