@@ -1,3 +1,3 @@
-function error404() {
+function errorOne() {
   window.location.href = '/';
 }
