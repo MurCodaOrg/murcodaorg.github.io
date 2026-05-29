@@ -1,0 +1,51 @@
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--murcoda-style-black);
+  }
+  header {
+    background-color: var(--murcoda-style-black);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--murcoda-style-white);
+  }
+  header {
+    background-color: var(--murcoda-style-white);
+  }
+}
+
+body {
+  font-family: 'murcoda one';
+}
+
+header {
+  width: 100%;
+  height: 64px;
+  border: 2px solid var(--murcoda-main);
+  border-radius: 10px;
+  display: flex;
+}
+
+.murcoda-m { color: var(--murcoda-m); }
+.murcoda-u { color: var(--murcoda-u); }
+.murcoda-r { color: var(--murcoda-r); }
+.murcoda-c { color: var(--murcoda-c); }
+.murcoda-o { color: var(--murcoda-o); }
+.murcoda-d { color: var(--murcoda-d); }
+.murcoda-a { color: var(--murcoda-a); }
+
+.logo {
+  border-radius: 8px 0 0 8px;
+  width: 64px;
+  height: 64px;
+}
+
+.murcoda-title {
+  margin-left: 10px;
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
