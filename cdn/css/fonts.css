@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'murcoda';
+  font-style: italic;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url(https://murcodaorg.github.io/cdn/fonts/murcoda/italic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'murcoda';
+  font-style: bold;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url(https://murcodaorg.github.io/cdn/fonts/murcoda/bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'murcoda';
+  font-style: bolditalic;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url(https://murcodaorg.github.io/cdn/fonts/murcoda/bolditalic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'murcoda';
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url(https://murcodaorg.github.io/cdn/fonts/murcoda/normal.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'big';
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url(https://murcodaorg.github.io/cdn/fonts/big/normal.ttf) format('truetype');
+}
