@@ -37,7 +37,7 @@
 }
 
 body {
-  font-family: 'murcoda';
+  font-family: 'big';
 }
 
 header {
@@ -64,7 +64,7 @@ header {
 
 header h1 {
   margin-left: 10px;
-  margin-top: 0px;
+  margin-top: 14px;
   display: flex;
   align-items: center;
   gap: 2px;
